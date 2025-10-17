@@ -1,0 +1,1 @@
+FROM mortarcms/web-base
