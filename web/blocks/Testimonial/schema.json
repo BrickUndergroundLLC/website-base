@@ -1,0 +1,55 @@
+{
+  "type": "testimonial",
+  "title": "Testimonial",
+  "description": "Display a customer testimonial with quote, author details, and optional rating",
+  "icon": "quote",
+  "category": "content",
+  "fields": [
+    {
+      "name": "quote",
+      "type": "text",
+      "label": "Quote",
+      "required": true,
+      "placeholder": "Enter the testimonial quote...",
+      "help": "The main testimonial text from the customer"
+    },
+    {
+      "name": "author",
+      "type": "string",
+      "label": "Author Name",
+      "required": true,
+      "placeholder": "John Doe"
+    },
+    {
+      "name": "role",
+      "type": "string",
+      "label": "Role/Title",
+      "required": true,
+      "placeholder": "CEO"
+    },
+    {
+      "name": "company",
+      "type": "string",
+      "label": "Company",
+      "required": false,
+      "placeholder": "Acme Corporation"
+    },
+    {
+      "name": "image",
+      "type": "image",
+      "label": "Author Photo",
+      "required": false,
+      "help": "Optional profile photo of the person giving the testimonial"
+    },
+    {
+      "name": "rating",
+      "type": "number",
+      "label": "Star Rating",
+      "required": false,
+      "min": 1,
+      "max": 5,
+      "help": "Optional 1-5 star rating"
+    }
+  ]
+}
+
