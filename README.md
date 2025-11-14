@@ -51,11 +51,13 @@ The `/web` directory contains **only customizations** for the website. The base 
 
 - **Port**: 3010 (internal: 3000)
 - **URL**: https://lcl.example.com
-- **Base Image**: `mortarcms/web-base:1.1.0`
+- **Base Image**: `mortarcms/web-base:1.0.3`
 - **Customizations**: 
-  - `web/components/` - Custom React components
-  - `web/blocks/` - Custom CMS content blocks
-  - `web/templates/` - Custom page templates
+  - `web/components/` - Custom React components (mounted to `/app/components/custom`)
+  - `web/blocks/` - Custom CMS content blocks (mounted to `/app/blocks/custom`)
+  - `web/templates/` - Custom page templates (mounted to `/app/templates/custom`)
+
+The base image provides default templates, components, and blocks in `/app/templates/base`, `/app/components/base`, and `/app/blocks/base`. Your custom additions are automatically discovered and merged with the base items via the API endpoints at `/mortarcms-api/templates`, `/mortarcms-api/components`, and `/mortarcms-api/blocks`.
 
 ### API
 The `/api` directory extends the `mortarcms/api-base` Docker image with custom models, views, and tasks.

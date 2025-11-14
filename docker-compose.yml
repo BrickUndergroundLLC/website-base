@@ -29,6 +29,13 @@ services:
       - NEXT_TELEMETRY_DISABLED=1
     ports:
       - "3010:3000"
+    volumes:
+      # Mount custom templates, components, and blocks into the custom subdirectories
+      # This preserves the base templates/components/blocks from the web-base image
+      # and allows live editing of custom items during development
+      - ./web/templates:/app/templates/custom
+      - ./web/components:/app/components/custom
+      - ./web/blocks:/app/blocks/custom
     networks:
       - bndventures-network
     healthcheck:

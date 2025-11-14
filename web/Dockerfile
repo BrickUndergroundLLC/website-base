@@ -6,21 +6,21 @@ FROM mortarcms/web-base:1.0.3 AS base
 # Switch to root to copy files
 USER root
 
-# Copy custom components
-# These will be available at /app/custom/components
-COPY --chown=nextjs:nodejs ./components /app/custom/components
+# Copy custom components into the components/custom directory
+# These will be available at /app/components/custom
+COPY --chown=nextjs:nodejs ./components /app/components/custom
 
-# Copy custom blocks
-# These will be available at /app/custom/blocks
-COPY --chown=nextjs:nodejs ./blocks /app/custom/blocks
+# Copy custom blocks into the blocks/custom directory
+# These will be available at /app/blocks/custom
+COPY --chown=nextjs:nodejs ./blocks /app/blocks/custom
 
-# Copy custom templates
-# These will be available at /app/custom/templates
-COPY --chown=nextjs:nodejs ./templates /app/custom/templates
+# Copy custom templates into the templates/custom directory
+# These will be available at /app/templates/custom
+COPY --chown=nextjs:nodejs ./templates /app/templates/custom
 
 # Switch back to nextjs user
 USER nextjs
 
 # The base image already defines CMD ["node", "server.js"]
 # The application will dynamically load custom components, blocks, and templates
-# from /app/custom/* directories at runtime
+# from /app/components/custom, /app/blocks/custom, /app/templates/custom directories at runtime
